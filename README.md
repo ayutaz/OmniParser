@@ -17,6 +17,20 @@
 - [2024/10] Both Interactive Region Detection Model and Icon functional description model are released! [Hugginface models](https://huggingface.co/microsoft/OmniParser)
 - [2024/09] OmniParser achieves the best performance on [Windows Agent Arena](https://microsoft.github.io/WindowsAgentArena/)! 
 
+## Docke Env
+We provide a docker image for easy deployment. 
+
+* Docker env
+* cache the model weights
+
+```bash
+DOCKER_BUILDKIT=1 docker build -t omniparser .
+docker run -it -p 7860:7860 omniparser
+```
+
+```sh
+python
+
 ## Install 
 Install environment:
 ```python
