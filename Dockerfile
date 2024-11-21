@@ -62,9 +62,7 @@ RUN . /opt/conda/etc/profile.d/conda.sh && conda activate omni && \
     pip install huggingface_hub
 
 # Run download.py to fetch model weights and convert safetensors to .pt format
-# キャッシュマウントを使用してモデルをダウンロード
-RUN --mount=type=cache,target=/root/.cache/huggingface \
-    . /opt/conda/etc/profile.d/conda.sh && conda activate omni && \
+RUN . /opt/conda/etc/profile.d/conda.sh && conda activate omni && \
     python download.py && \
     echo "Contents of weights directory:" && \
     ls -lR weights && \
@@ -75,5 +73,3 @@ EXPOSE 7861
 
 # Configure Gradio to be accessible externally
 ENV GRADIO_SERVER_NAME="0.0.0.0"
-# To debug, keep the container running
-# CMD ["tail", "-f", "/dev/null"]

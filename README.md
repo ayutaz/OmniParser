@@ -24,9 +24,8 @@ We provide a docker image for easy deployment.
 * cache the model weights
 
 ```bash
-DOCKER_BUILDKIT=1 docker build -t omniparser .
-docker run -it -p 7860:7860 omniparser
-```
+docker build -t omniparser .
+docker run -it -p 7860:7860 omniparserdocker run -it --gpus all -p 7861:7861 --name omniparser-container omniparser /bin/bash```
 
 ```sh
 python
